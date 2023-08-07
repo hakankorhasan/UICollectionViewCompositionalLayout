@@ -20,12 +20,13 @@ class MainView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGroupedBackground
         
-        return collectionView
+        return collectionView  
     }()
     
     init() {
         super.init(frame: .zero)
         setup()
+        setupSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +34,7 @@ class MainView: UIView {
     }
     
     func setup() {
-        backgroundColor = .blue
+        backgroundColor = .white
     }
     
     func setupSubviews() {
