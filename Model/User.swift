@@ -5,4 +5,9 @@
 //  Created by Hakan Körhasan on 7.08.2023.
 //
 
-import Foundation
+import UIKit
+
+struct User: Decodable {
+    let id: Int
+    let name: String
+}

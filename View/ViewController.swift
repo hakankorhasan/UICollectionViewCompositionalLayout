@@ -9,9 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let mainView = MainView()
+    
+    override func loadView() {
+        view = mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        getUsers()
+    }
+    
+    func getUsers() {
+        NetworkingService.requestUsers { result in
+            switch result {
+            case .success(let users):
+                print(users)
+            case .failure(let err):
+                print(err)
+            }
+        }
     }
 
 
